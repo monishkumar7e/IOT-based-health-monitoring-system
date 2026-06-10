@@ -1,40 +1,102 @@
-# IOT-based-health-monitoring-system
-IoT based Health Monitoring System
+# IoT-Based Patient Health Monitoring System using ESP32 and Blynk
 
 ## Overview
-This project interfaces a Pulse Sensor and DS18B20 Temperature Sensor with an ESP8266 (NodeMCU) and integrates it with Arduino IoT Cloud. The collected data is sent to the cloud for monitoring.
+This project is an IoT-based Patient Health Monitoring System that uses an ESP32 microcontroller to monitor vital health parameters and display them remotely through the Blynk IoT platform. The system enables real-time monitoring of patient health data from anywhere using a smartphone.
 
 ## Features
-Reads heart rate from the Pulse Sensor.
-Measures temperature using the DS18B20 sensor.
-Sends data to Arduino IoT Cloud for remote monitoring.
-Uses WiFi to establish a cloud connection.
+- Real-time health monitoring
+- Remote access through Blynk mobile application
+- Wi-Fi based communication
+- User-friendly dashboard
+- Low-cost and easy to implement
+- Continuous data monitoring
 
-## components Required
-ESP8266 NodeMCU
-Pulse Sensor
-DS18B20 Temperature Sensor
-10KΩ Resistor (for DS18B20)
-Jumper Wires
+## Components Required
+- ESP32 Development Board
+- MAX30102 Pulse Oximeter Sensor
+- Temperature Sensor (LM35 / DHT11 / DS18B20)
+- Breadboard
+- Jumper Wires
+- USB Cable
+- Wi-Fi Connection
+- Smartphone with Blynk App
 
-## Connections
-Component	    - ESP8266 Pin
-Pulse Sensor	 -A0
-DS18B20 Data   -Pin	D4
-DS18B20 VCC	   -3.3V
-DS18B20 GND	   -GND
-4.7KΩ Resistor	-Between VCC & Data Pin
+## Software Requirements
+- Arduino IDE
+- Blynk IoT Platform
+- ESP32 Board Package
+- Required Arduino Libraries
 
-## Setup Instructions
-Connect the components as per the connection diagram.
-Install the following Arduino libraries:
-OneWire
-DallasTemperature
-ArduinoIoTCloud
-Arduino_ConnectionHandler
-Configure your WiFi SSID, Password, and Arduino IoT Cloud Credentials.
-Upload the code to your ESP8266.
-Monitor sensor readings on the Serial Monitor or Arduino IoT Cloud Dashboard.
+## Block Diagram
 
-## Usage
-Once uploaded, the ESP8266 will continuously read the pulse rate and temperature and send the data to Arduino IoT Cloud. The values can be viewed on the cloud dashboard in real-time.
+```
+Health Sensors
+       |
+       v
+     ESP32
+       |
+     Wi-Fi
+       |
+       v
+   Blynk Cloud
+       |
+       v
+ Blynk Mobile App
+```
+
+## Working Principle
+
+The sensors continuously monitor the patient's health parameters such as Heart Rate, SpO₂, and Body Temperature. The ESP32 processes the sensor data and sends it to the Blynk Cloud through a Wi-Fi connection. The Blynk application receives the data and displays it on a dashboard for real-time monitoring.
+
+## Blynk Dashboard Parameters
+
+| Parameter | Description |
+|------------|-------------|
+| Heart Rate | Beats Per Minute (BPM) |
+| SpO₂ | Blood Oxygen Level (%) |
+| Temperature | Body Temperature (°C) |
+
+## Sample Output
+
+| Parameter | Value |
+|------------|--------|
+| Heart Rate | 82 BPM |
+| SpO₂ | 97 % |
+| Temperature | 36.8 °C |
+
+## Applications
+
+- Remote Patient Monitoring
+- Smart Healthcare Systems
+- Home Health Monitoring
+- Elderly Care
+- Hospital Monitoring
+- Telemedicine
+
+## Future Enhancements
+
+- SMS Alert System
+- Emergency Notification Feature
+- Cloud Database Storage
+- Doctor Dashboard
+- AI-Based Health Analysis
+
+## Advantages
+
+- Portable and Compact
+- Low Power Consumption
+- Real-Time Monitoring
+- Wireless Communication
+- Cost Effective
+
+## Conclusion
+
+The IoT-Based Patient Health Monitoring System using ESP32 and Blynk provides an efficient and reliable solution for remote healthcare monitoring. The system enables real-time tracking of important health parameters and improves accessibility to patient health information.
+
+## Author
+
+Monish Kumar
+
+## License
+
+This project is developed for educational and academic purposes.
